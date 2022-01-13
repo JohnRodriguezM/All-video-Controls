@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>workshp 3</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section id="sectionMain">
+            <video id="video" src="../assets/y2mate.com - Wasa Wasa Remix  Ryan Castro Ft Karol G_480p.mp4" width="400"
+                preload="auto" loop controls></video>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        class operacionVideos {
+            play(video) {
+                video.play()
+                console.log(
+                    `propiedad:elemento.play()`
+                );
+            }
+            pause(video) {
+                video.pause()
+                console.log(
+                    `propiedad:elemento.pause()`
+                );
+            }
+            reload(video) {
+                video.load()
+                console.log(
+                    `propiedad:elemento.load()`
+                );
+            }
+            mute(video) {
+                video.muted = true;
+                console.log(
+                    `propiedad:elemento.muted = "true"`
+                );
+            }
+            noMute(video){
+                video.muted = false;
+                console.log(
+                    `propiedad:elemento.muted = "false"`
+                );
+            }
+            bajarVol(video) {
+                video.volume -= .1;
+                console.log(`menos: ${video.volume}`)
+            if (video.volume <= 0.1) {
+                alert('no puedes bajar mas el volumen')
+                }
+                console.log(
+                    `propiedad:elemento.volume -= .1`
+                );
+            }
+            subirVol(video){
+                video.volume += .1;
+                console.log(`mas: ${video.volume}`)
+                if (video.volume >= 1) {
+                alert('no puedes subir mas el volumen')
+                }
+                console.log(
+                    `propiedad:elemento.volume += .1`
+                );
+            }
+            adelantarVideo(video) {
+                video.currentTime += 10
+                console.log(
+                    `propiedad:elemento.currentTime += 10`
+                );
+            }
+            atrasarVideo(video) {
+                video.currentTime -= 10
+                console.log(
+                    `propiedad:elemento.currentTime -= 10`
+                );
+            }
+            adelantarx2(video){
+                video.currentTime += 22;
+                console.log(
+                    `propiedad:elemento.currentTime += 22`
+                );
+            }
+            atrasarx2(video){
+                video.currentTime -= 22;
+                console.log(
+                    `propiedad:elemento.currentTime -= 22`
+                );
+            }
+            mayorVelocidad(){
+                video.playbackRate += .1;
+                console.log(
+                    `propiedad:elemento.playbackRate += .1`
+                );
+            }
+            menorVelocidad(){
+                video.playbackRate -= .1;
+                console.log(
+                    `propiedad:elemento.playbackRate -= .1`
+                );
+            }
+        }
+
+        const sectionMain = document.getElementById("sectionMain")
+        const video = document.getElementById('video')
+        console.log(video)
+        /*
+        let atributo = video.getAttribute('preload')
+        console.log(atributo.length);
+        function evento(e){
+            e.target.removeEventListener(e.type,evento)
+            // codigo a ejecutar
+            console.log(e.target)
+        }
+        video.addEventListener('mouseover', evento)
+        */
+        const arrayButton = []
+        for (i = 0; i < 13; i++) {
+            let x = document.createElement('button')
+            arrayButton.push(x)
+        }
+        arrayButton.forEach(item => {
+            item.setAttribute('class','button')
+        })
+        // btn Play
+        arrayButton[0].textContent = 'Play'
+        // btn pause
+        arrayButton[1].textContent = 'pause'
+        //btn reload
+        arrayButton[2].textContent = 'reload'
+        //btn mute
+        arrayButton[3].textContent = 'mute'
+        // btn != mute
+        arrayButton[4].textContent = 'quitar mute'
+        // btn less volume
+        arrayButton[5].textContent = 'bajar Volumen'
+        // btm plus volume
+        arrayButton[6].textContent = 'subir Volumen'
+        // btn adelantar 10 seg
+        arrayButton[7].textContent = 'adelantar 10 seg'
+        // btn atrasar 10 segundos
+        arrayButton[8].textContent = 'atrasar 10 seg'
+        // btn adelantar 22 segundos
+        arrayButton[9].textContent = 'adelantar 22 seg'
+        // btn atrasar 22 segundos
+        arrayButton[10].textContent = 'atrasar 22 seg'
+        arrayButton[11].textContent = 'mayor velocidad'
+        arrayButton[12].textContent = 'menor velocidad'
+        sectionMain.append(...arrayButton)
+
+        const miVideoPlay = arrayButton[0].addEventListener('click', () => {
+            return new operacionVideos().play(video)
+        })
+
+        const miVideoPause = arrayButton[1].addEventListener('click', () => {
+            return new operacionVideos().pause(video)
+        })
+
+        const load = arrayButton[2].addEventListener('click', () => {
+            return new operacionVideos().reload(video)
+        })
+
+        const miVideoMute = arrayButton[3].addEventListener('click', () => {
+            return new operacionVideos().mute(video)
+        })
+
+        const miVideoNoMute = arrayButton[4].addEventListener('click', () => {
+            return new operacionVideos().noMute(video)
+        })
+
+        const bajar = arrayButton[5].addEventListener('click', () => {
+            return new operacionVideos().bajarVol(video)
+        })
+
+        const subir = arrayButton[6].addEventListener('click', () => {
+            return new operacionVideos().subirVol(video)
+        })
+
+        const adelantarVideo = arrayButton[7].addEventListener('click', () => {
+            return new operacionVideos().adelantarVideo(video)
+        })
+
+        const atrasarVideo = arrayButton[8].addEventListener('click', () => {
+            return new operacionVideos().atrasarVideo(video)
+        })
+        const adelantarDoble = arrayButton[9].addEventListener('click', () => {
+            return new operacionVideos().adelantarx2(video)
+        })
+        const atrasarDoble = arrayButton[10].addEventListener('click', () => {
+            return new operacionVideos().atrasarx2(video)
+        })
+
+        const mayorVelocidad = arrayButton[11].addEventListener('click', () => {
+            return new operacionVideos().mayorVelocidad(video)
+        })
+        const menorVelocidad = arrayButton[12].addEventListener('click', () => {
+            return new operacionVideos().menorVelocidad(video)
+        })
+    </script>
+</body>
+
+</html>
