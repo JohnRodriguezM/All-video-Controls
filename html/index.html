@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
     <title>2. 0 workshp 3</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1 style = "text-align: center;">video controls</h1>
+      <h1
+        style="text-align: center"
+        class="p-4 text-center justify-center items-center text-4xl font-bold font-mono"
+      >
+        video controls
+      </h1>
     </header>
     <main>
-        <section id="sectionMain">
-            <video id="video" src="../assets/y2mate.com - Wasa Wasa Remix  Ryan Castro Ft Karol G_480p.mp4" width="400"
-                preload="auto" loop controls></video>
-        </section>
+      <section id="sectionMain">
+        <video
+          id="video"
+          src="../assets/y2mate.com - Wasa Wasa Remix  Ryan Castro Ft Karol G_480p.mp4"
+          width="400"
+          preload="auto"
+          loop
+          controls
+        ></video>
+      </section>
     </main>
-    <footer>
-
+    <footer className="flex justify-content text-center">
+      <h2>@2022</h2>
     </footer>
-    <script type = "module" src="../js/clases.mjs"></script>
-    <script type = "module" src="../js/index.mjs"></script>
-</body>
-
+    <script type="module" src="../dist/clases.js"></script>
+    <script type="module" src="../dist/index.js"></script>
+  </body>
 </html>
